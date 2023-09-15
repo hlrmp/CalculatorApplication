@@ -20,10 +20,7 @@ namespace CalculatorApplication
         }
 
         public delegate T Information<T>(T arg1);
-        public class CalculatorClass
-        {
-
-        }
+       
         public Form1()
         {
             InitializeComponent();
@@ -31,7 +28,9 @@ namespace CalculatorApplication
 
         }
 
+        private void buttoncal_Click(object sender, EventArgs e)
+        {
 
-
+        }
     }
 }

@@ -71,6 +71,7 @@
             buttoncal.TabIndex = 3;
             buttoncal.Text = "CALCULATE";
             buttoncal.UseVisualStyleBackColor = false;
+            buttoncal.Click += buttoncal_Click;
             // 
             // label1
             // 
