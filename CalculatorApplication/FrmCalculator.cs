@@ -35,39 +35,47 @@ namespace CalculatorApplication
 
         private void buttoncal_Click(object sender, EventArgs e)
         {
-            num1 = Convert.ToDouble(txtinput1.Text);
-            num2 = Convert.ToDouble(txtinput2.Text);
+            try
+            {
+                num1 = Convert.ToDouble(txtinput1.Text);
+                num2 = Convert.ToDouble(txtinput2.Text);
 
 
 
-            if (comboBoxoperators.Text.ToString().Equals("-"))
-            {
-                cal.CalculateEvent += new Formula<double>(cal.GetDifference);
-                lblDisplayTotal.Text = cal.GetDifference(num1, num2).ToString();
-                cal.CalculateEvent -= new Formula<double>(cal.GetDifference);
+                if (comboBoxoperators.Text.ToString().Equals("-"))
+                {
+                    cal.CalculateEvent += new Formula<double>(cal.GetDifference);
+                    lblDisplayTotal.Text = cal.GetDifference(num1, num2).ToString();
+                    cal.CalculateEvent -= new Formula<double>(cal.GetDifference);
+                }
+                else if (comboBoxoperators.Text.ToString().Equals("+"))
+                {
+                    cal.CalculateEvent += new Formula<double>(cal.GetSum);
+                    lblDisplayTotal.Text = cal.GetSum(num1, num2).ToString();
+                    cal.CalculateEvent -= new Formula<double>(cal.GetSum);
+                }
+                else if (comboBoxoperators.Text.ToString().Equals("*"))
+                {
+                    cal.CalculateEvent += new Formula<double>(cal.GetProduct);
+                    lblDisplayTotal.Text = cal.GetProduct(num1, num2).ToString();
+                    cal.CalculateEvent -= new Formula<double>(cal.GetProduct);
+                }
+                else if (comboBoxoperators.Text.ToString().Equals("/"))
+                {
+                    cal.CalculateEvent += new Formula<double>(cal.GetQuotient);
+                    lblDisplayTotal.Text = cal.GetQuotient(num1, num2).ToString();
+                    cal.CalculateEvent -= new Formula<double>(cal.GetQuotient);
+                }
+                else
+                {
+                    MessageBox.Show("select an operator");
+                }
             }
-            else if (comboBoxoperators.Text.ToString().Equals("+"))
+            catch (Exception)
             {
-                cal.CalculateEvent += new Formula<double>(cal.GetSum);
-                lblDisplayTotal.Text = cal.GetSum(num1, num2).ToString();
-                cal.CalculateEvent -= new Formula<double>(cal.GetSum);
+                MessageBox.Show(" Enter number only ");
             }
-            else if (comboBoxoperators.Text.ToString().Equals("*"))
-            {
-                cal.CalculateEvent += new Formula<double>(cal.GetProduct);
-                lblDisplayTotal.Text = cal.GetProduct(num1, num2).ToString();
-                cal.CalculateEvent -= new Formula<double>(cal.GetProduct);
-            }
-            else if (comboBoxoperators.Text.ToString().Equals("/"))
-            {
-                cal.CalculateEvent += new Formula<double>(cal.GetQuotient);
-                lblDisplayTotal.Text = cal.GetQuotient(num1, num2).ToString();
-                cal.CalculateEvent -= new Formula<double>(cal.GetQuotient);
-            }
-            else
-            {
-                MessageBox.Show("select an operator");
-            }
+           
 
         }
 
