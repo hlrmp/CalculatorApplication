@@ -34,7 +34,7 @@
             buttoncal = new Button();
             label1 = new Label();
             label2 = new Label();
-            label3 = new Label();
+            lblDisplayTotal = new Label();
             label4 = new Label();
             SuspendLayout();
             // 
@@ -93,15 +93,15 @@
             label2.TabIndex = 5;
             label2.Text = "ENTER SECOND NUMBER :";
             // 
-            // label3
+            // lblDisplayTotal
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(192, 195);
-            label3.Name = "label3";
-            label3.Size = new Size(164, 21);
-            label3.TabIndex = 6;
-            label3.Text = "______________________";
+            lblDisplayTotal.AutoSize = true;
+            lblDisplayTotal.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblDisplayTotal.Location = new Point(192, 195);
+            lblDisplayTotal.Name = "lblDisplayTotal";
+            lblDisplayTotal.Size = new Size(164, 21);
+            lblDisplayTotal.TabIndex = 6;
+            lblDisplayTotal.Text = "______________________";
             // 
             // label4
             // 
@@ -119,7 +119,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(412, 260);
             Controls.Add(label4);
-            Controls.Add(label3);
+            Controls.Add(lblDisplayTotal);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(buttoncal);
@@ -140,7 +140,7 @@
         private Button buttoncal;
         private Label label1;
         private Label label2;
-        private Label label3;
+        private Label lblDisplayTotal;
         private Label label4;
     }
 }
